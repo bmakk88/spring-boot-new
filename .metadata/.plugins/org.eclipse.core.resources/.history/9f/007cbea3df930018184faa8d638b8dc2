@@ -1,0 +1,21 @@
+package com.accenture.lkm.dao;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class EmployeeDAOWrapper {
+	
+	@Autowired
+	private EmployeeDAO dao;
+	
+	public List<Employee>findAll(){
+		List<Employee> list new ArrayList<Employee>();
+		
+		Iterable<EmployeeEntityBean> listEn = dao.findAll();
+		listEn
+	}
+
+}

@@ -1,0 +1,22 @@
+package com.accenture.ui;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class UITester1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		EmployeeDAO employeeDAOIMPL=null;
+		
+		try {
+			
+			ApplicationContext applicationContext =
+					new ClassPathXmlApplicationContext("com/accenture/resource/jpa_spring1.xml");
+			
+			employeeDAOIMPL = (EmployeeDAO) applicationContext.getBean(employeeDAO);
+		}
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.accenture.lkm.bussiness.bean;
+
+public class Employee {
+
+}

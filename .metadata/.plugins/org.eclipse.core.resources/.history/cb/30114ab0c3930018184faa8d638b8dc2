@@ -1,0 +1,23 @@
+package com.accenture.entity;
+
+import java.util.Date;
+
+
+public class EmployeeEntityBean {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
+	private String name;
+	private String role;
+	
+	private Date insertTime;
+	
+	private Double salary;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

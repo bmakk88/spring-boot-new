@@ -1,0 +1,29 @@
+package com.accenture.lkm.dao;
+
+import java.util.Collection;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+import com.accenture.lkm.bussiness.bean.Employee;
+
+public class EmployeeDAO {
+
+	
+	static public Map<Integer, Employee> mapOfEmployees = new LinkedHashMap<Integer, Employee>();
+	
+	static int count=10004;
+	
+	static {
+		mapOfEmployees.put(10001,new Employee("Jack",10001,12345.6,2));
+		mapOfEmployees.put(10002,new Employee("Justin",10002,12445.6,3));
+		mapOfEmployees.put(10003,new Employee("Jack",10001,12645.6,5));
+	}
+	
+	public Collection<Employee> getAllEmployee(){
+		return mapOfEmployees.values();
+	}
+	
+	public Employee getEmployeeDetailsById(int id) {
+		return mapOfEmployees.get(id);
+	}
+}

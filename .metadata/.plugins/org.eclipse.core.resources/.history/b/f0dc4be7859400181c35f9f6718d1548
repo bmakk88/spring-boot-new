@@ -1,0 +1,27 @@
+package com.accenture.lkm.web.controller;
+
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.accenture.lkm.dao.EmployeeDAO;
+
+@RestController
+public class EmployeeController {
+
+	@Autowired
+	EmployeeDAO employeeDAO;
+	
+	@RequestMapping(value="emp/controller/getDetails",
+			method = RequestMethod.GET,
+			produces = MeMediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<Employee>> getEmployeeDetails(){
+		List<Employee> listEmployee =
+				new ArrayList<Employee> (employeeDAO.getAllEmployee());
+		
+		return new ResponseEntity<List<Emplyee>> (listEmployee, HttpStatus.OK);
+	}
+}

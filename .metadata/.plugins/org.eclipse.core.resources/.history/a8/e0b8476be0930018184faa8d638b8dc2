@@ -1,0 +1,17 @@
+package com.accenture.lkm.web.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.accenture.lkm.dao.EmployeeDAOWrapper;
+
+@RestController
+public class EmployeeController {
+
+	@Autowired
+	EmployeeDAOWrapper employeeDAO;
+	
+	@RequestMapping(value ="emp/controller/getDetails",
+			method = RequestMethod.GET,
+			produces = MediaType.APPLICATION_JSON_VALUE);
+	
+}
